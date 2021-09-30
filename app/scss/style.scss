@@ -91,9 +91,22 @@
       width: 576px;
    }
 
+   &__search::before {
+      content: '';
+      position: absolute;
+      left: 13px;
+      bottom: 14px;
+      width: 20px;
+      height: 20px;
+      color: $dark-800;
+   }
+
+   &__search--icon::before {
+      background-image: url(../images/icons/icon-search.svg);
+   }
+
    &__search-field,
    &__search-btn {
-      outline: none;
       border-radius: 6px;
    }
 
@@ -101,7 +114,7 @@
       width: 100%;
       color: $dark-800;
       padding: 15px 0;
-      padding-left: 15px;
+      padding-left: 50px;
    }
 
    &__search-btn {
