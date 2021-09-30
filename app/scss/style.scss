@@ -4,6 +4,164 @@
 @import 'global';
 
 
+.header {
+   &__wrapper-top {
+      background-color: $dark-800;
+   }
+
+   &__top {
+      display: flex;
+      justify-content: space-between;
+      color: $white;
+      padding: 14px 0;
+      @extend %OpenSans-700;
+   }
+
+   &__contacts,
+   &__link {
+      display: flex;
+      align-items: center;
+   }
+
+   &__link:hover {
+      opacity: 0.7;
+   }
+
+   &__icon {
+      margin-right: 12px;
+   }
+
+   &__item:not(:last-child) {
+      position: relative;
+      margin-right: 48px;
+      font-size: 13px;
+   }
+
+   &__wrapper-bottom {
+      background-color: $green-900;
+   }
+
+   &__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $white;
+      padding: 25px 0;
+   }
+
+   &__catalog-btn {
+      position: relative;
+      width: 240px;
+      padding: 15px 0;
+      border-radius: 6px;
+      background-color: $white;
+      color: $green-900;
+   }
+
+   &__catalog-btn::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      bottom: 17px;
+      width: 25px;
+      height: 17px;
+
+   }
+
+   &__catalog-btn--nav-icon:before {
+      background-image: url(../images/icons/nav-icon.svg);
+   }
+
+   &__catalog-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 23px;
+      right: 19px;
+      width: 8px;
+      height: 4px;
+
+   }
+
+   &__catalog-btn--arrow-down:after {
+      background-image: url(../images/icons/arrow-down.svg);
+   }
+
+   &__search {
+      position: relative;
+      width: 576px;
+   }
+
+   &__search-field,
+   &__search-btn {
+      outline: none;
+      border-radius: 6px;
+   }
+
+   &__search-field {
+      width: 100%;
+      color: $dark-800;
+      padding: 15px 0;
+      padding-left: 15px;
+   }
+
+   &__search-btn {
+      background-color: $dark-800;
+      color: $white;
+      height: 100%;
+      width: 158px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+   }
+
+   &__search-btn::before {
+      content: "Поиск";
+      text-transform: uppercase;
+      color: $white;
+   }
+}
+
+.menu {
+   &__list {
+      display: flex;
+   }
+
+   &__item:not(:last-child) {
+      margin-right: 14px;
+   }
+
+   &__link:hover {
+      opacity: 0.7;
+   }
+}
+
+.user-nav {
+   display: flex;
+
+   &__item:not(:last-child) {
+      margin-right: 24px;
+   }
+
+   &__link {
+      position: relative;
+   }
+
+   &__num {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: white;
+      color: $red-900;
+      top: -8px;
+      left: -6px;
+      font-size: 10px;
+      text-align: center;
+      line-height: 18px;
+   }
+}
 
 
 
