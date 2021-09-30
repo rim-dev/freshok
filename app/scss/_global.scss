@@ -2,6 +2,7 @@ body {
    font-size: 14px;
    font-weight: 400;
    line-height: 1.4;
+   color: $dark-500;
    @extend %OpenSans-400;
 }
 
@@ -9,4 +10,11 @@ body {
    max-width: 1320px;
    margin: 0 auto;
    padding: 0 15px;
+}
+
+.btn {
+   background-color: transparent;
+   padding: 0;
+   border: none;
+   cursor: pointer;
 }
