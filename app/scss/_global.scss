@@ -7,6 +7,10 @@ body {
    @extend %OpenSans-400;
 }
 
+.logo {
+   display: inline-block;
+}
+
 .wrapper {
    min-height: 100%;
    display: flex;
