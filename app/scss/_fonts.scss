@@ -3,8 +3,8 @@
    font-weight: 400;
    font-style: normal;
    src: local('OpenSans-Regular'),
-      url('../fonts/OpenSans-Regular.woff2'), format('woff2'),
-      url('../fonts/OpenSans-Regular.woff'), format('woff');
+      url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+      url('../fonts/OpenSans-Regular.woff') format('woff');
    font-display: swap;
 }
 
@@ -13,8 +13,8 @@
    font-weight: 700;
    font-style: normal;
    src: local('OpenSans-Bold'),
-      url('../fonts/OpenSans-Bold.woff2'), format('woff2'),
-      url('../fonts/OpenSans-Bold.woff'), format('woff');
+      url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+      url('../fonts/OpenSans-Bold.woff') format('woff');
    font-display: swap;
 }
 
@@ -23,8 +23,8 @@
    font-weight: 600;
    font-style: normal;
    src: local('OpenSans-SemiBold'),
-      url('../fonts/OpenSans-SemiBold.woff2'), format('woff2'),
-      url('../fonts/OpenSans-SemiBold.woff'), format('woff');
+      url('../fonts/OpenSans-SemiBold.woff2') format('woff2'),
+      url('../fonts/OpenSans-SemiBold.woff') format('woff');
    font-display: swap;
 }
 
@@ -33,8 +33,8 @@
    font-weight: 300;
    font-style: normal;
    src: local('OpenSans-Light'),
-      url('../fonts/OpenSans-Light.woff2'), format('woff2'),
-      url('../fonts/OpenSans-Light.woff'), format('woff');
+      url('../fonts/OpenSans-Light.woff2') format('woff2'),
+      url('../fonts/OpenSans-Light.woff') format('woff');
    font-display: swap;
 }
 
@@ -43,8 +43,8 @@
    font-weight: 400;
    font-style: normal;
    src: local('Ruda-Regular'),
-      url('../fonts/Ruda-Regular.woff2'), format('woff2'),
-      url('../fonts/Ruda-Regulard.woff'), format('woff');
+      url('../fonts/Ruda-Regular.woff2') format('woff2'),
+      url('../fonts/Ruda-Regulard.woff') format('woff');
    font-display: swap;
 }
 
@@ -53,8 +53,8 @@
    font-weight: 600;
    font-style: normal;
    src: local('Ruda-SemiBold'),
-      url('../fonts/Ruda-SemiBold.woff2'), format('woff2'),
-      url('../fonts/Ruda-SemiBoldd.woff'), format('woff');
+      url('../fonts/Ruda-SemiBold.woff2') format('woff2'),
+      url('../fonts/Ruda-SemiBold.woff') format('woff');
    font-display: swap;
 }
 
@@ -63,7 +63,7 @@
    font-weight: 700;
    font-style: normal;
    src: local('Ruda-Bold'),
-      url('../fonts/Ruda-Bold.woff2'), format('woff2'),
-      url('../fonts/Ruda-Boldd.woff'), format('woff');
+      url('../fonts/Ruda-Bold.woff2') format('woff2'),
+      url('../fonts/Ruda-Bold.woff') format('woff');
    font-display: swap;
 }

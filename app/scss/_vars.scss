@@ -45,3 +45,11 @@ $white: #ffffff;
    font-family: 'Ruda-Bold', sans-serif;
    font-weight: 700;
 }
+
+%btn {
+   background-color: transparent;
+   padding: 0;
+   border: none;
+   cursor: pointer;
+   border-radius: 6px;
+}
