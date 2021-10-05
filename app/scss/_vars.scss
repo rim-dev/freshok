@@ -11,14 +11,14 @@ $silver-600: #C1C1C1;
 $silver-100: #F6F6F6;
 $white: #ffffff;
 
+%OpenSans-300 {
+   font-family: 'OpenSans-Light', sans-serif;
+   font-weight: 300;
+}
+
 %OpenSans-400 {
    font-family: 'OpenSans-Regular', sans-serif;
    font-weight: 400;
-}
-
-%OpenSans-700 {
-   font-family: 'OpenSans-Bold', sans-serif;
-   font-weight: 700;
 }
 
 %OpenSans-600 {
@@ -26,9 +26,9 @@ $white: #ffffff;
    font-weight: 600;
 }
 
-%OpenSans-300 {
-   font-family: 'OpenSans-Light', sans-serif;
-   font-weight: 300;
+%OpenSans-700 {
+   font-family: 'OpenSans-Bold', sans-serif;
+   font-weight: 700;
 }
 
 %Ruda-400 {
@@ -44,6 +44,11 @@ $white: #ffffff;
 %Ruda-700 {
    font-family: 'Ruda-Bold', sans-serif;
    font-weight: 700;
+}
+
+%Ruda-900 {
+   font-family: 'Ruda-Black', sans-serif;
+   font-weight: 900;
 }
 
 %btn {

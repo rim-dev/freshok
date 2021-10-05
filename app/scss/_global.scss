@@ -1,4 +1,6 @@
 body {
+   display: flex;
+   flex-direction: column;
    height: 100%;
    font-size: 14px;
    font-weight: 400;
@@ -7,18 +9,12 @@ body {
    @extend %OpenSans-400;
 }
 
-.logo {
-   display: inline-block;
-}
-
-.wrapper {
-   min-height: 100%;
-   display: flex;
-   flex-direction: column;
-}
-
 .main {
    flex: 1 1 auto;
+}
+
+.logo {
+   display: inline-block;
 }
 
 .container {
@@ -35,7 +31,8 @@ body {
 }
 
 .title {
-   @extend %Ruda-700;
+   @extend %Ruda-600;
+   color: $dark-900;
    text-transform: uppercase;
    text-align: center;
    font-size: 32px;
