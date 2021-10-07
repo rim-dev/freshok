@@ -1,6 +1,6 @@
 $(function(){
 
-   $('.slider').slick({
+   $('.promo-slider__list').slick({
       arrows: true,
     })  
 

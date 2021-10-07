@@ -4,8 +4,54 @@ const concat         = require('gulp-concat');
 const autoprefixer   = require('gulp-autoprefixer');
 const uglify         = require('gulp-uglify');
 const imagemin       = require('gulp-imagemin');
+const fileInclide    = require('gulp-file-include');
+const svgSprite      = require('gulp-svg-sprite');
+const cheerio        = require('gulp-cheerio');
+const replace        = require('gulp-replace');
 const del            = require('del');
 const browserSync    = require('browser-sync').create();
+
+
+//svgSprite
+
+const svgSprites = () => {
+   return src(['app/images/icons/**/*.svg']) 
+
+   .pipe(cheerio({
+      run: function($) {
+         $('[fill]').removeAttr('fill');
+         $('[stroke]').removeAttr('stroke');
+         $('[style]').removeAttr('style');
+         $('[clip-path]').removeAttr('clip-path');
+      },
+      parserOptions: {xmlMode: true}
+   }))
+
+   .pipe(replace('&gt;', '>'))
+
+   .pipe(svgSprite({
+      mode: {
+         stack: {
+            sprite: "../sprite.svg" //spritee file name
+         }
+      },
+   }))
+
+   .pipe(dest('app/images'))
+}
+
+
+// htmlInclude сборка компонентов из составных файлов html В index.html
+const htmlInclude = () => {
+   return src(['app/html/*.html'])
+   .pipe(fileInclide ({
+      prefix: '@',
+      basepath: '@file',
+   }))
+   .pipe(dest('app'))
+   .pipe(browserSync.stream());
+}
+
 
 function browsersync() {
    browserSync.init({
@@ -15,8 +61,6 @@ function browsersync() {
       notify: false
    })
 }
-
-
 
 function styles() {
    return src('app/scss/style.scss')
@@ -80,10 +124,14 @@ function cleanDist() {
 function watching () {
    watch(['app/scss/**/*.scss'], styles);
    watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
-   watch(['app/**/*.html']).on('change', browserSync.reload)
+   watch(['app/html/**/*.html'], htmlInclude);
+   watch(['app/images/icons/**/*.svg'], svgSprites);
+   watch(['app/scss/**/*.scss']).on('change', browserSync.reload);
+   watch(['app/**/*.html']).on('change', browserSync.reload);
 }
 
-
+exports.htmlInclude = htmlInclude;
+exports.svgSprites = svgSprites;
 exports.styles  = styles;
 exports.scripts = scripts;
 exports.browsersync = browsersync;
@@ -92,4 +140,4 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(styles, svgSprites, htmlInclude, scripts, browsersync, watching);

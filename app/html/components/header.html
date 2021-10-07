@@ -1,0 +1,76 @@
+<h1 class="sr-only">ФрешОК - Интернет магазин продовольственных товаров</h1>
+<header class="header">
+   <div class="header__wrapper">
+      <div class="container">
+         <nav class="header__top">
+            <ul class="header__contacts contacts">
+               <li class="contacts__item">
+                  <a class="contacts__link contacts__link--avto" href="#">
+                     Адрес и время доставки
+                  </a>
+               </li>
+               <li class="contacts__item">
+                  <a class="contacts__link contacts__link--tel" href="#">
+                     Горячая линия 24/7
+                  </a>
+               </li>
+            </ul>
+            <nav class="header__menu menu">
+               <ul class="menu__list">
+                  <li class="menu__item">
+                     <a class="menu__link" href="#">Доставка</a>
+                  </li>
+                  <li class="menu__item">
+                     <a class="menu__link" href="#">О нас</a>
+                  </li>
+                  <li class="menu__item">
+                     <a class="menu__link" href="#">Новости</a>
+                  </li>
+               </ul>
+            </nav>
+         </nav>
+      </div>
+   </div>
+
+   <div class="header__inner">
+      <div class="container">
+         <nav class="header__bottom">
+            <a class="logo" href="#">
+               <img class="logo__img" src="images/logo.svg" alt="логотип" width="200" height="60">
+            </a>
+            <button class="header__catalog-btn" type="button">
+               Каталог продуктов
+            </button>
+
+            <form class="header__search">
+               <label class="header__search-label" for="search-field">
+                  <input class="header__search-field" name="search-field" type="search" placeholder="Найти в магазине..." aria-label="Поле для поиска" required>
+               </label>
+               <button class="header__search-btn" type="submit">Поиск</button>
+            </form>
+
+            <div class="user-nav">
+               <button class="user-nav__item" type="button" aria-label="Профиль клиента">
+                  <a class="user-nav__link" href="#">
+                     <svg class="user-nav__user-link">
+                        <use xlink:href="images/sprite.svg#user-link"></use>
+                     </svg>
+                  </a>
+               </button>
+               <button class="user-nav__item" type="button" aria-label="Избранные товары">
+                  <svg class="user-nav__favorite-link">
+                     <use xlink:href="images/sprite.svg#favorite-link"></use>
+                  </svg>
+                  <span class="user-nav__num">12</span>
+               </button>
+               <button class="user-nav__item" type="button" aria-label="Корзина">
+                  <svg class="user-nav__cart-link">
+                     <use xlink:href="images/sprite.svg#cart-link"></use>
+                  </svg>
+                  <span class="user-nav__num">12</span>
+               </button>
+            </div>
+         </nav>
+      </div>
+   </div>
+</header>
