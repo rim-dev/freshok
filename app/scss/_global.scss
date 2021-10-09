@@ -7,7 +7,7 @@ body {
    line-height: 1.4;
    letter-spacing: 0.03em;
    color: $dark-500;
-   @extend %OpenSans-400;
+   font-family: $OpenSans;
 }
 
 .main {
@@ -25,12 +25,12 @@ body {
 }
 
 .title {
-   @extend %Ruda-600;
+   font-family: $Ruda;
+   font-weight: 600;
    color: $dark-900;
    text-transform: uppercase;
    text-align: center;
    font-size: 32px;
    font-weight: 600;
-   letter-spacing: 0.03em;
    margin-bottom: 30px;
 }

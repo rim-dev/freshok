@@ -1,4 +1,5 @@
 @import 'fonts';
+@import 'mixins';
 @import 'vars';
 @import 'libs';
 @import 'reset';
@@ -17,46 +18,50 @@
       padding: 14px 0;
       font-size: 13px;
       text-transform: uppercase;
-      @extend %OpenSans-700;
+      font-family: $OpenSans;
+      font-weight: 700;
    }
 
-   &__contacts,
-   .contacts__link {
+   &__contacts {
       display: flex;
       align-items: center;
    }
 
-   .contacts__link {
-      position: relative;
-      transition: all 0.3s;
+   .contacts {
+      &__link {
+         display: flex;
+         align-items: center;
+         position: relative;
+         transition: opacity 0.3s;
 
-      &--avto {
-         padding-left: 44px;
-      }
+         &--avto {
+            padding-left: 44px;
+         }
 
-      &--tel {
-         padding-left: 32px;
-      }
+         &--tel {
+            padding-left: 32px;
+         }
 
-      &::before {
-         position: absolute;
-         content: '';
-         left: 0;
-         width: 32px;
-         height: 22px;
-         background-repeat: no-repeat;
-      }
+         &::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            width: 32px;
+            height: 22px;
+            background-repeat: no-repeat;
+         }
 
-      &--avto::before {
-         background-image: url(../images/icons/icon-address.svg);
-      }
+         &--avto::before {
+            background-image: url(../images/icons/icon-address.svg);
+         }
 
-      &--tel::before {
-         background-image: url(../images/icons/icon-tel.svg);
-      }
+         &--tel::before {
+            background-image: url(../images/icons/icon-tel.svg);
+         }
 
-      &:hover {
-         opacity: 0.7;
+         &:hover {
+            opacity: 0.7;
+         }
       }
    }
 
@@ -85,7 +90,8 @@
 
    &__catalog-btn {
       @extend %btn;
-      @extend %OpenSans-600;
+      font-family: $OpenSans;
+      font-weight: 600;
       display: flex;
       align-items: center;
       text-align: start;
@@ -96,7 +102,7 @@
       background-color: $white;
       color: $green-900;
       margin-right: 30px;
-      transition: all 0.3s;
+      transition: background-color 0.3s;
       background-image: url(../images/icons/nav-icon.svg);
       background-repeat: no-repeat;
       background-position: 18px center;
@@ -117,7 +123,7 @@
       }
 
       &--arrow {
-         width: 7.25px;
+         width: 8px;
          height: 4px;
          fill: $green-900;
       }
@@ -135,44 +141,37 @@
       position: relative;
       max-width: 576px;
       width: 100%;
-
-      &:before {
-         content: '';
-         position: absolute;
-         left: 13px;
-         bottom: 14px;
-         width: 20px;
-         height: 20px;
-         color: $dark-800;
-         background-image: url(../images/icons/icon-search.svg);
-      }
    }
 
-   &__search-field,
-   &__search-btn {
+   &__field,
+   &__btn {
       border-radius: 6px;
       outline: transparent;
    }
 
-   &__search-field {
+   &__field {
       width: 100%;
       color: $dark-800;
       padding: 15px 30% 15px 50px;
+      background-image: url(../images/icons/icon-search.svg);
+      background-repeat: no-repeat;
+      background-position: 13px;
    }
 
-   &__search-btn {
-      @extend %OpenSans-600;
+   &__btn {
+      font-family: $OpenSans;
+      font-weight: 600;
       @extend %btn;
       background-color: $dark-800;
       color: $white;
       height: 100%;
-      width: 27.4%;
+      width: 27%;
       position: absolute;
       top: 0;
       right: 0;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      transition: all 0.3s;
+      transition: box-shadow 0.3s, opacity 0.3s, color 0.3s, background-color 0.3s;
       text-transform: uppercase;
 
       &:focus {
@@ -196,12 +195,14 @@
       display: flex;
    }
 
-   &__item:not(:last-child) {
-      margin-right: 24px;
+   &__item {
+      &:not(:last-child) {
+         margin-right: 24px;
+      }
    }
 
    &__link {
-      transition: all 0.3s;
+      transition: opacity 0.3s;
 
       &:hover {
          opacity: 0.7;
@@ -214,11 +215,14 @@
    margin-left: auto;
 
    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
       width: 50px;
       height: 50px;
       border-radius: 3px;
-      transition: all 0.3s;
+      transition: background-color 0.3s;
 
       &:hover {
          background-color: #72AF26;
@@ -269,7 +273,6 @@
    position: relative;
 
    &__wrapper {
-      height: 600px;
       background-repeat: no-repeat;
       background-size: cover;
    }
@@ -289,7 +292,8 @@
    }
 
    &__title {
-      @extend %Ruda-900;
+      font-family: $Ruda;
+      font-weight: 900;
       text-transform: uppercase;
       font-size: 60px;
       line-height: 1.3;
@@ -304,6 +308,7 @@
    }
 
    &__content {
+      @include line-clamp(16, 1.4, 3);
       font-size: 16px;
       letter-spacing: normal;
       margin-bottom: 35px;
@@ -317,7 +322,7 @@
       padding: 12px 24px;
       background-color: $green-900;
       color: $white;
-      transition: all 0.3s;
+      transition: box-shadow 0.3s, color 0.3s, background-color 0.3s;
 
       &:focus {
          box-shadow: 0 0 0 4px $green-200;
@@ -342,7 +347,7 @@
       font-size: 0;
       width: 60px;
       height: 60px;
-      transition: all 0.3s;
+      transition: box-shadow 0.3s, background-color 0.3s, border 0.3s;
    }
 
    .slick-prev {
@@ -403,30 +408,37 @@
       }
    }
 
-   &__icon--free {
-      &::before {
-         background-image: url(../images/icons/delivery.svg);
+   &__icon {
+      &--free {
+         &::before {
+            background-image: url(../images/icons/delivery.svg);
+         }
       }
-   }
 
-   &__icon--return {
-      &::before {
-         background-image: url(../images/icons/return.svg);
+      &--return {
+         &::before {
+            background-image: url(../images/icons/return.svg);
+         }
       }
-   }
 
-   &__icon--support {
-      &::before {
-         background-image: url(../images/icons/24h.svg);
+      &--support {
+         &::before {
+            background-image: url(../images/icons/24h.svg);
+         }
       }
    }
 
    &__title {
-      @extend %OpenSans-600;
+      font-family: $OpenSans;
+      font-weight: 600;
       font-size: 16px;
       letter-spacing: 0;
       color: $dark-900;
       margin-bottom: 6px;
+   }
+
+   &__text {
+      @include line-clamp(14, 1.4, 2);
    }
 }
 
@@ -448,7 +460,7 @@
 
          &::after {
             content: '';
-            transition: all 0.5s;
+            transition: background-color 0.5s;
          }
 
          &:hover:after,
@@ -464,7 +476,8 @@
       }
 
       &__btn {
-         @extend %OpenSans-700;
+         font-family: $OpenSans;
+         font-weight: 700;
          text-transform: uppercase;
          font-size: 15px;
          color: $dark-500;
@@ -480,6 +493,10 @@
       margin-bottom: 48px;
    }
 
+   &__btn {
+      display: flex;
+   }
+
    &__more {
       @extend %btn;
       display: block;
@@ -489,7 +506,7 @@
       margin: 0 auto;
       color: $green-900;
       border: 1px solid $green-900;
-      transition: all 0.3s;
+      transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
 
       &:focus {
          box-shadow: 0 0 0 4px $green-200;
@@ -511,7 +528,7 @@
    border: 1px solid rgba(#111111, 0.2);
    padding: 18px;
    border-radius: 6px;
-   transition: all 0.3s;
+   transition: border-color 0.3s;
    position: relative;
 
    &__link {
@@ -555,16 +572,19 @@
       }
    }
 
-   &__badge--new {
-      background-color: $green-900;
-   }
+   &__badge {
 
-   &__badge--sale {
-      background-color: $red-900;
-   }
+      &--new {
+         background-color: $green-900;
+      }
 
-   &__badge--hit {
-      background-color: $orange-900;
+      &--sale {
+         background-color: $red-900;
+      }
+
+      &--hit {
+         background-color: $orange-900;
+      }
    }
 
    &__favorite-icon {
@@ -575,7 +595,7 @@
       right: -6px;
       top: -6px;
       fill: $silver-600;
-      transition: all 0.3s;
+      transition: fill 0.3s;
       z-index: 2;
 
       &:hover {
@@ -597,9 +617,10 @@
    }
 
    &__title {
-      @extend %OpenSans-600;
+      font-family: $OpenSans;
+      font-weight: 600;
+      @include line-clamp(14, 1.4, 3);
       color: $dark-900;
-      font-size: 14px;
    }
 
    &__info {
@@ -613,18 +634,20 @@
       flex-direction: column;
    }
 
-   &__price--old {
-      position: relative;
-      color: $silver-600;
-
-      &::before {
-         border-bottom: 1px solid $silver-600;
-         position: absolute;
-         content: '';
-         width: 100%;
-         height: 50%;
-         transform: rotate(-15deg);
+   &__price {
+      &--old {
+         position: relative;
          color: $silver-600;
+
+         &::before {
+            border-bottom: 1px solid $silver-600;
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 50%;
+            transform: rotate(-15deg);
+            color: $silver-600;
+         }
       }
    }
 
@@ -642,7 +665,7 @@
       background-color: $green-900;
       padding: 8px;
       fill: $white;
-      transition: all 0.3s;
+      transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
 
       &:focus {
          box-shadow: 0 0 0 4px $green-200;
@@ -705,7 +728,8 @@
 
    &__sub-btn {
       @extend %btn;
-      @extend %OpenSans-700;
+      font-family: $OpenSans;
+      font-weight: 700;
       font-size: 12px;
       line-height: 1.6;
       background-color: $green-900;
@@ -717,7 +741,7 @@
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       text-transform: uppercase;
-      transition: all 0.3s;
+      transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
 
       &::before {
          @extend %btn;
@@ -773,7 +797,7 @@
    }
 
    &__link {
-      transition: all 0.3s;
+      transition: opacity 0.3s;
 
       &:hover {
          opacity: 0.7;
