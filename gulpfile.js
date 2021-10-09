@@ -15,7 +15,7 @@ const browserSync    = require('browser-sync').create();
 //svgSprite
 
 const svgSprites = () => {
-   return src(['app/images/icons/**/*.svg']) 
+   return src(['app/images/icons/**.svg']) 
 
    .pipe(cheerio({
       run: function($) {
@@ -125,7 +125,7 @@ function watching () {
    watch(['app/scss/**/*.scss'], styles);
    watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
    watch(['app/html/**/*.html'], htmlInclude);
-   watch(['app/images/icons/**/*.svg'], svgSprites);
+   watch(['app/images/icons/**.svg'], svgSprites);
    watch(['app/scss/**/*.scss']).on('change', browserSync.reload);
    watch(['app/**/*.html']).on('change', browserSync.reload);
 }

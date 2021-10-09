@@ -43,20 +43,17 @@
             </button>
 
             <form class="header__search">
-               <label class="header__search-label" for="search-field">
-                  <input class="header__search-field" name="search-field" type="search" placeholder="Найти в магазине..." aria-label="Поле для поиска" required>
-               </label>
-               <button class="header__search-btn" type="submit">Поиск</button>
+               <label class="header__label" for="search-field" aria-label="Поиск"></label>
+               <input class="header__field" id="search-field" name="search-field" type="search" placeholder="Найти в магазине..." aria-label="Поле для поиска" required>
+               <button class="header__btn" type="submit">Поиск</button>
             </form>
 
             <div class="user-nav">
-               <button class="user-nav__item" type="button" aria-label="Профиль клиента">
-                  <a class="user-nav__link" href="#">
-                     <svg class="user-nav__user-link">
-                        <use xlink:href="images/sprite.svg#user-link"></use>
-                     </svg>
-                  </a>
-               </button>
+               <a class="user-nav__item" href="#">
+                  <svg class="user-nav__user-link">
+                     <use xlink:href="images/sprite.svg#user-link"></use>
+                  </svg>
+               </a>
                <button class="user-nav__item" type="button" aria-label="Избранные товары">
                   <svg class="user-nav__favorite-link">
                      <use xlink:href="images/sprite.svg#favorite-link"></use>
