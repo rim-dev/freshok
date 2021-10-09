@@ -24,13 +24,6 @@ body {
    padding: 0 15px;
 }
 
-.btn {
-   background-color: transparent;
-   padding: 0;
-   border: none;
-   cursor: pointer;
-}
-
 .title {
    @extend %Ruda-600;
    color: $dark-900;
@@ -40,9 +33,4 @@ body {
    font-weight: 600;
    letter-spacing: 0.03em;
    margin-bottom: 30px;
-}
-
-.socials {
-   display: flex;
-   justify-content: space-between;
 }
