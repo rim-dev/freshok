@@ -1,6 +1,6 @@
 @import 'fonts';
-@import 'mixins';
 @import 'vars';
+@import 'mixins';
 @import 'libs';
 @import 'reset';
 @import 'global';
@@ -18,7 +18,6 @@
       padding: 14px 0;
       font-size: 13px;
       text-transform: uppercase;
-      font-family: $OpenSans;
       font-weight: 700;
    }
 
@@ -36,10 +35,18 @@
 
          &--avto {
             padding-left: 44px;
+
+            &::before {
+               background-image: url(../images/icons/icon-address.svg);
+            }
          }
 
          &--tel {
             padding-left: 32px;
+
+            &::before {
+               background-image: url(../images/icons/icon-tel.svg);
+            }
          }
 
          &::before {
@@ -49,14 +56,6 @@
             width: 32px;
             height: 22px;
             background-repeat: no-repeat;
-         }
-
-         &--avto::before {
-            background-image: url(../images/icons/icon-address.svg);
-         }
-
-         &--tel::before {
-            background-image: url(../images/icons/icon-tel.svg);
          }
 
          &:hover {
@@ -90,11 +89,9 @@
 
    &__catalog-btn {
       @extend %btn;
-      font-family: $OpenSans;
       font-weight: 600;
       display: flex;
       align-items: center;
-      text-align: start;
       position: relative;
       max-width: 240px;
       width: 100%;
@@ -159,7 +156,6 @@
    }
 
    &__btn {
-      font-family: $OpenSans;
       font-weight: 600;
       @extend %btn;
       background-color: $dark-800;
@@ -275,6 +271,7 @@
    &__wrapper {
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center center;
    }
 
    &__inner {
@@ -348,20 +345,18 @@
       width: 60px;
       height: 60px;
       transition: box-shadow 0.3s, background-color 0.3s, border 0.3s;
+      border: 1px solid $silver-600;
+      border-radius: 6px;
    }
 
    .slick-prev {
       left: 0;
       background: url('../images/icons/arrow-left.svg') 45% 50% / 35% no-repeat rgba($white, 0.8);
-      border: 1px solid $silver-600;
-      border-radius: 6px;
    }
 
    .slick-next {
       right: 0;
       background: url('../images/icons/arrow-right.svg') 55% 50% / 35% no-repeat rgba($white, 0.8);
-      border: 1px solid $silver-600;
-      border-radius: 6px;
    }
 
    .slick-arrow:focus {
@@ -429,7 +424,6 @@
    }
 
    &__title {
-      font-family: $OpenSans;
       font-weight: 600;
       font-size: 16px;
       letter-spacing: 0;
@@ -476,7 +470,6 @@
       }
 
       &__btn {
-         font-family: $OpenSans;
          font-weight: 700;
          text-transform: uppercase;
          font-size: 15px;
@@ -523,7 +516,7 @@
    }
 }
 
-.product-card {
+.product-card-preview {
    max-width: 300px;
    border: 1px solid rgba(#111111, 0.2);
    padding: 18px;
@@ -617,7 +610,6 @@
    }
 
    &__title {
-      font-family: $OpenSans;
       font-weight: 600;
       @include line-clamp(14, 1.4, 3);
       color: $dark-900;
@@ -684,6 +676,489 @@
 }
 
 
+
+
+.banners {
+   margin-bottom: 72px;
+
+   &__wrapper {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__item {
+      text-transform: uppercase;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 76px 0;
+      padding-left: 32px;
+
+      &--white {
+         color: $white;
+         text-shadow: 2px 2px 0 rgba(#000, 0.25);
+      }
+
+      &--dark-500 {
+         color: $dark-500;
+      }
+
+      &--630x300 {
+         max-width: 630px;
+         width: 100%;
+         height: 300px;
+      }
+
+      &--300x300 {
+         max-width: 300px;
+         width: 100%;
+         height: 300px;
+      }
+   }
+
+   &__type {
+      @include line-clamp(12, 1, 1);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+   }
+
+   &__title {
+      @include line-clamp(30, 1.4, 2);
+      font-family: $Ruda;
+      font-weight: 600;
+      width: 75%;
+      font-size: 30px;
+      margin-bottom: 12px;
+   }
+
+   &__shopping {
+      position: relative;
+      font-weight: 700;
+      padding-bottom: 8px;
+      line-height: normal;
+
+      &::after {
+         content: '';
+         display: block;
+         position: absolute;
+         bottom: 0;
+         width: 100%;
+         height: 0.143em;
+      }
+
+      &--white {
+         color: $white;
+         text-shadow: 2px 2px 0 rgba(#000, 0.25);
+
+         &::after {
+            background-color: $white;
+         }
+      }
+
+      &--dark-500 {
+         color: $dark-500;
+
+         &::after {
+            background-color: $dark-500;
+         }
+      }
+   }
+}
+
+
+.promo-actions {
+   padding: 72px 0;
+   background-color: $silver-100;
+
+   &__filters {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 48px;
+   }
+
+   &__item {
+      position: relative;
+      padding-bottom: 3px;
+
+      &:not(:last-child) {
+         margin-right: 24px;
+      }
+
+      &::after {
+         content: '';
+         transition: background-color 0.5s;
+      }
+
+      &:hover:after,
+      &:active:after {
+         content: '';
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         height: 3px;
+         background-color: $green-200;
+         width: 100%;
+      }
+   }
+
+   &__filters-btn {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 0.1em;
+      color: $dark-500;
+   }
+
+
+
+
+
+
+
+
+
+
+   .actions__cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-gap: 30px;
+      margin-bottom: 48px;
+   }
+
+
+
+   .actions-card-preview {
+      display: flex;
+      max-width: 300px;
+      border: 1px solid $silver-600;
+      padding: 12px;
+      border-radius: 6px;
+      background-color: $white;
+      transition: border-color 0.3s;
+      position: relative;
+
+      &__link {
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         z-index: 1;
+      }
+
+      &:hover {
+         border-color: $green-900;
+      }
+
+      &__photo {
+         margin-right: 12px;
+         display: block;
+      }
+
+      &__image {
+         width: 100px;
+      }
+
+      &__badges {
+         position: absolute;
+         top: 12px;
+         left: 12px;
+      }
+
+      &__badge {
+         display: flex;
+         flex-direction: column;
+         width: fit-content;
+         text-transform: uppercase;
+         font-size: 10px;
+         font-weight: 700;
+         line-height: 1;
+         color: $white;
+         padding: 3px 6px;
+         border-radius: 6px;
+
+         &:not(:last-child) {
+            margin-bottom: 6px;
+         }
+
+         &--new {
+            background-color: $green-900;
+         }
+
+         &--hit {
+            background-color: $orange-900;
+         }
+      }
+
+      &__content {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         position: relative;
+         width: 100%;
+      }
+
+      &__info {
+         display: flex;
+         justify-content: space-between;
+      }
+
+      &__title {
+         font-weight: 600;
+         @include line-clamp(14, 1.4, 3);
+         color: $dark-900;
+      }
+
+      &__condition {
+         font-weight: 600;
+         font-size: 10px;
+         line-height: 1;
+         text-transform: uppercase;
+         position: absolute;
+         content: '';
+         bottom: 24px;
+
+         &--lot {
+            color: $green-900;
+         }
+
+         &--few {
+            color: $red-900;
+         }
+
+         &--not {
+            color: $silver-600;
+         }
+      }
+
+      &__price {
+         &:nth-child(2) {
+            font-weight: 600;
+            margin-right: 12px;
+         }
+
+         &--new {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 1;
+         }
+
+         &--old {
+            position: relative;
+            color: $silver-600;
+            font-size: 12px;
+            line-height: 1;
+
+            &::before {
+               border-bottom: 1px solid $silver-600;
+               position: absolute;
+               content: '';
+               width: 100%;
+               height: 85%;
+               transform: rotate(-15deg);
+               color: $silver-600;
+            }
+         }
+      }
+
+      &__rating {
+         position: relative;
+         font-weight: 700;
+         line-height: 1;
+         padding-right: 18px;
+
+         &::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            bottom: 0;
+            right: 0;
+            background-image: url(../images/icons/star-16-16.svg);
+         }
+      }
+
+      &__star-icon {
+         // @extend %btn;
+         width: 16px;
+         height: 16px;
+         fill: $yellow-900;
+      }
+   }
+
+   &__btn {
+      display: flex;
+      justify-content: center;
+   }
+
+   &__more {
+      @extend %btn;
+      display: block;
+      font-size: 18px;
+      line-height: 1.3;
+      padding: 12px 24px;
+      background-color: $green-900;
+      color: $white;
+      transition: box-shadow 0.3s, color 0.3s, background-color 0.3s;
+
+      &:focus {
+         box-shadow: 0 0 0 4px $green-200;
+      }
+
+      &:hover {
+         background-color: #4D810C;
+      }
+
+      &:active {
+         color: rgba($white, 0.5);
+         background-color: $green-900;
+         box-shadow: inset 0 4px 4px rgba(#000, 0.25);
+      }
+   }
+}
+
+
+
+.brands {
+   padding: 72px 55px;
+
+   &__list {
+      // display: flex;
+      // justify-content: space-around;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      justify-items: center;
+   }
+
+   &__img {
+      width: 80px;
+      height: 59px;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.5;
+      transition: opacity 0.3s;
+
+      &:hover {
+         opacity: 1;
+      }
+
+      &--sprite {
+         background-image: url(../images/brands/Sprite.png);
+      }
+
+      &--dr-pepper {
+         background-image: url(../images/brands/dr-pepper-4.png);
+      }
+
+      &--coca-cola {
+         background-image: url(../images/brands/CocaCola.png);
+      }
+
+      &--pepsi {
+         background-image: url(../images/brands/pepsi.png);
+      }
+
+      &--red-bull {
+         background-image: url(../images/brands/redbull.png);
+      }
+
+      &--fanta {
+         background-image: url(../images/brands/fanta.png);
+      }
+   }
+}
+
+
+
+.news {
+   margin-bottom: 72px;
+
+   &__head {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__all-news {
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $green-900;
+      line-height: 1;
+      position: relative;
+
+      &::after {
+         content: '';
+         position: absolute;
+         bottom: -6px;
+         left: -1px;
+         height: 2px;
+         background-color: $green-900;
+         width: 105%;
+      }
+   }
+
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 30px;
+   }
+
+   &__item {
+      position: relative;
+      box-shadow: 0 3px 3px rgba(#000, 0.25);
+      border-radius: 6px;
+   }
+
+   &__link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+   }
+
+   &__date-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 20px;
+      width: 65px;
+      height: 76px;
+      background-color: $white;
+      border-bottom-right-radius: 6px;
+      border-bottom-left-radius: 6px;
+      color: $dark-900;
+      z-index: 2;
+   }
+
+   &__date-month {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+   }
+
+   &__date-day {
+      font-size: 30px;
+      line-height: 1;
+
+   }
+
+   &__text {
+      @include line-clamp(16, 1.5, 3);
+      min-height: 108px;
+      font-weight: 600;
+      color: $dark-900;
+      padding: 18px;
+      letter-spacing: normal;
+   }
+}
+
+
 .footer {
 
    background-color: $dark-800;
@@ -728,7 +1203,6 @@
 
    &__sub-btn {
       @extend %btn;
-      font-family: $OpenSans;
       font-weight: 700;
       font-size: 12px;
       line-height: 1.6;
@@ -810,16 +1284,19 @@
 .pay-systems {
    display: flex;
 
-   &__icon--visa {
-      width: 93px;
-      height: 29px;
-      fill: $white
-   }
+   &__icon {
 
-   &__icon--mastercard {
-      width: 49px;
-      height: 29px;
-      fill: $white
+      &--visa {
+         width: 93px;
+         height: 29px;
+         fill: $white
+      }
+
+      &--mastercard {
+         width: 49px;
+         height: 29px;
+         fill: $white
+      }
    }
 
    &__item {
