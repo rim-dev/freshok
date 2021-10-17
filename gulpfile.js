@@ -130,14 +130,14 @@ function watching () {
    watch(['app/**/*.html']).on('change', browserSync.reload);
 }
 
-exports.htmlInclude = htmlInclude;
-exports.svgSprites = svgSprites;
-exports.styles  = styles;
-exports.scripts = scripts;
-exports.browsersync = browsersync;
-exports.watching = watching;
-exports.images = images;
-exports.cleanDist = cleanDist;
-exports.build = series(cleanDist, images, build);
+exports.htmlInclude  = htmlInclude;
+exports.svgSprites   = svgSprites;
+exports.styles       = styles;
+exports.scripts      = scripts;
+exports.browsersync  = browsersync;
+exports.watching     = watching;
+exports.images       = images;
+exports.cleanDist    = cleanDist;
+exports.build        = series(cleanDist, images, build);
 
 exports.default = parallel(styles, svgSprites, htmlInclude, scripts, browsersync, watching);
