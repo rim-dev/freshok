@@ -2,11 +2,17 @@ $(function(){
    
    $('.promo-slider__list').slick({
       arrows: true,
-   });    
+   });   
 
-   
-   // var mixer = mixitup('.product__cards');
-   // var mixer = mixitup('.actions__cards');
+   // $('.brands__list').slick({
+   //    arrows: false,
+   //    dots: true,
+   //    infinite: true,
+   //    slidesToShow: 6,
+   //    slidesToScroll: 6,
+   // });    
+
+
 
    var containerEl1 = document.querySelector('[data-ref="container-1"]');
    var containerEl2 = document.querySelector('[data-ref="container-2"]');

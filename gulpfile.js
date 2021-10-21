@@ -44,7 +44,7 @@ const svgSprites = () => {
 // htmlInclude сборка компонентов из составных файлов html В index.html
 const htmlInclude = () => {
    return src(['app/html/*.html'])
-   .pipe(fileInclide ({
+   .pipe(fileInclude ({
       prefix: '@',
       basepath: '@file',
    }))
