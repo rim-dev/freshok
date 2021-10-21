@@ -4,7 +4,7 @@ const concat         = require('gulp-concat');
 const autoprefixer   = require('gulp-autoprefixer');
 const uglify         = require('gulp-uglify');
 const imagemin       = require('gulp-imagemin');
-const fileInclide    = require('gulp-file-include');
+const fileInclude    = require('gulp-file-include');
 const svgSprite      = require('gulp-svg-sprite');
 const cheerio        = require('gulp-cheerio');
 const replace        = require('gulp-replace');
@@ -44,7 +44,7 @@ const svgSprites = () => {
 // htmlInclude сборка компонентов из составных файлов html В index.html
 const htmlInclude = () => {
    return src(['app/html/*.html'])
-   .pipe(fileInclide ({
+   .pipe(fileInclude ({
       prefix: '@',
       basepath: '@file',
    }))
@@ -130,14 +130,14 @@ function watching () {
    watch(['app/**/*.html']).on('change', browserSync.reload);
 }
 
-exports.htmlInclude = htmlInclude;
-exports.svgSprites = svgSprites;
-exports.styles  = styles;
-exports.scripts = scripts;
-exports.browsersync = browsersync;
-exports.watching = watching;
-exports.images = images;
-exports.cleanDist = cleanDist;
-exports.build = series(cleanDist, images, build);
+exports.htmlInclude  = htmlInclude;
+exports.svgSprites   = svgSprites;
+exports.styles       = styles;
+exports.scripts      = scripts;
+exports.browsersync  = browsersync;
+exports.watching     = watching;
+exports.images       = images;
+exports.cleanDist    = cleanDist;
+exports.build        = series(cleanDist, images, build);
 
 exports.default = parallel(styles, svgSprites, htmlInclude, scripts, browsersync, watching);
